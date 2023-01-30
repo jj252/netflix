@@ -1,7 +1,7 @@
 import { createElement} from 'react';
 
 
-import { Container, Row, Col, Button,Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 
 // ...Button, Form, FormGroup, Label, Input, FormText
 
@@ -35,7 +35,8 @@ export function CreatedElement( props ) {
 }
 
 export function CreatedElement2(names) {
-    console.log('new Button Created')
+    console.log('new Button Created');
+    console.log(names);
     return createElement(
       'div',
       { className: 'greeting' },

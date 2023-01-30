@@ -4,7 +4,7 @@
 import './App.css';
 //import NucampLogo from './app/assets/img/logo.png';
 import CampsitesList from './features/campsites/CampsitesList';
-
+import { Container, Row, Col, Button } from 'reactstrap';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import {createElement,useState} from 'react';
@@ -13,6 +13,7 @@ import {CreatedElement2} from './components/Misc';
 import {New_Button} from './components/Misc';
 import {New_Button2} from './components/Misc';
 import  My_Form  from './components/My_Form';
+import CampsiteDirectoryPage from './pages/CampsitesDirectoryPage';
 
 
 
@@ -25,18 +26,19 @@ const test2 = (name) =>{
 const test3 = 'this is a test';
 
 function App() {
-  const [test4, setTest4] = useState(0);
+  const [name, setName] = useState('Jeremy');
   return (
     <div className="App">
-      
-            <CreatedElement person={{ name: 'Lin Lanying', imageId: '1bX5QH6'}} test={test2('myName')} testx={test3}  />
-            <CreatedElement2 props='Jeremy'  />
-            <CreatedElement2 props='Janet'  />
+            <Button className='primary' color="info" onClick={() => setName('Jade')}>This is my New button</Button>
+            <CreatedElement person={{ name: {name}, imageId: '1bX5QH6'}} test={test2({name})} testx={name}  />
+            <CreatedElement2 props={name}  />
+            <CreatedElement2 props={name}  />
             <New_Button buttonName='Jeremys Button'/>
+            
             
             <New_Button2 />
             <Header />
-            <CampsitesList />
+            <CampsiteDirectoryPage />
             <My_Form />
             <Footer />
     </div>
