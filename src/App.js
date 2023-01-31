@@ -17,6 +17,7 @@ import CampsiteDirectoryPage from './pages/CampsitesDirectoryPage';
 import {Routes, Route} from  'react-router-dom';
 import ContactPage from './pages/ContactPage';
 import HomePage from './pages/HomePage';
+import CampsiteDetailPage from './pages/CampsiteDetailPage';
 
 
 
@@ -44,6 +45,10 @@ function App() {
               <Route path='/' element={<HomePage />} />
               <Route path='contact' element={<ContactPage />} />
               <Route path='directory' element={<CampsiteDirectoryPage />} />
+              <Route 
+                path='directory/:campsiteId'
+                element={<CampsiteDetailPage />}
+              />
             </Routes>
             <My_Form />
             <Footer />
