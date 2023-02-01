@@ -18,7 +18,7 @@ import {Routes, Route} from  'react-router-dom';
 import ContactPage from './pages/ContactPage';
 import HomePage from './pages/HomePage';
 import CampsiteDetailPage from './pages/CampsiteDetailPage';
-
+import AboutPage from './pages/AboutPage';
 
 
 const test2 = (name) =>{
@@ -45,6 +45,7 @@ function App() {
               <Route path='/' element={<HomePage />} />
               <Route path='contact' element={<ContactPage />} />
               <Route path='directory' element={<CampsiteDirectoryPage />} />
+              <Route path='about' element={<AboutPage />} />
               <Route 
                 path='directory/:campsiteId'
                 element={<CampsiteDetailPage />}
