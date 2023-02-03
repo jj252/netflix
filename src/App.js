@@ -26,12 +26,20 @@ const test2 = (name) =>{
   return name;
 }
 
+const basicBtn = {
+  border:'solid 2px purple',
+  color: 'blue',
+  backgroundColor:'yellow'
+}
+
 const test3 = 'this is a test';
 
 function App() {
   const [name, setName] = useState('Jeremy');
   return (
     <div className="App">
+            <Button style={basicBtn} >This is my New button</Button>
+            <Button style={{color:'blue', backgroundColor:'red'}} >This is my New button</Button>
             <Button className='primary' color="info" onClick={() => setName('Jade')}>This is my New button</Button>
             <CreatedElement person={{ name: {name}, imageId: '1bX5QH6'}} test={test2({name})} testx={name}  />
             <CreatedElement2 props={name}  />
