@@ -17,6 +17,8 @@ const AnimatedDisplayCard = ({item}) =>{
     },[]);
 
     return (
+        <>
+        <div>hello world</div>
         <animated.div style={animatedStyle}>
             <Card >
                 <CardImg src={image} alt={name} />
@@ -26,6 +28,7 @@ const AnimatedDisplayCard = ({item}) =>{
                 </CardBody>
             </Card>
         </animated.div>
+        </>
     )
 }
 

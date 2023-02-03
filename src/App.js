@@ -7,7 +7,7 @@ import CampsitesList from './features/campsites/CampsitesList';
 import { Container, Row, Col, Button } from 'reactstrap';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import {createElement,useState} from 'react';
+import {createElement,useState,useEffect} from 'react';
 import {CreatedElement} from './components/Misc';
 import {CreatedElement2} from './components/Misc';
 import {New_Button} from './components/Misc';
@@ -34,13 +34,32 @@ const basicBtn = {
 
 const test3 = 'this is a test';
 
+const peaceOnEarth = () =>{
+  console.log("peace on earth")
+}
+
 function App() {
   const [name, setName] = useState('Jeremy');
+  
+  const test1 = (mytest) => { 
+    return console.log (!mytest);
+  }
+
+  const noSetName = () =>{
+    console.log('I never set a name')
+  }
+  let x = 0;
+  useEffect(() => {
+    setTimeout(peaceOnEarth,2000);
+  },[name]);
+
   return (
+    
     <div className="App">
-            <Button style={basicBtn} >This is my New button</Button>
-            <Button style={{color:'blue', backgroundColor:'red'}} >This is my New button</Button>
-            <Button className='primary' color="info" onClick={() => setName('Jade')}>This is my New button</Button>
+            <Button onclick={() => setName('Marcus')} style={{color:'blue', backgroundColor:'red'}} >This is my New button</Button>
+            <Button onClick={() => x+=2} style={basicBtn} >This is my New button</Button>
+            <Button className='primary' color="info" onClick={() => setName('Jade') }>This is my New button</Button>
+            <Button className='primary' color="info" onClick={() => test1(true)}>This is my New button</Button>
             <CreatedElement person={{ name: {name}, imageId: '1bX5QH6'}} test={test2({name})} testx={name}  />
             <CreatedElement2 props={name}  />
             <CreatedElement2 props={name}  />

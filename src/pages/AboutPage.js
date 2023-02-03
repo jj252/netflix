@@ -1,14 +1,29 @@
 import {Col,Row,Container,Card,CardBody,CardHeader} from 'reactstrap';
 import SubHeader from '../components/SubHeader';
 import PartnersList from '../features/partners/PartnersList';
+import {useSpring, animated} from 'react-spring';
+
+
 const AboutPage = () => {
+
+    const animatedStyle = useSpring({
+        from: {
+            opacity:0,
+            transform: 'scale(1,0)',
+        },
+        to: {
+            opacity:1,
+            transform: 'scale(1,1)' 
+        }
+      });
+
     return(
         <Container>
             <SubHeader current='About Us'/>
             <Row className='row-content'>
                 <Col sm='6'>
                     <h3>Our Mission</h3>
-                    <p>
+                    <animated.p style={animatedStyle}>
                         We present a curated database of the best campsites in the
                         vast woods and backcountry of the World Wide Web Wilderness.
                         We increase access to adventure for the public while
@@ -17,7 +32,7 @@ const AboutPage = () => {
                         campsite to make sure that they are up to our standards. We
                         also present a platform for campers to share reviews on
                         campsites they have visited with each other.
-                    </p>
+                    </animated.p>
                 </Col>
                 <Col sm='6'>
                     <Card>
