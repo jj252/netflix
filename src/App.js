@@ -7,7 +7,7 @@ import CampsitesList from './features/campsites/CampsitesList';
 import { Container, Row, Col, Button } from 'reactstrap';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import {createElement,useState,useEffect} from 'react';
+import {createElement,useState,useEffect,useRef} from 'react';
 import {CreatedElement} from './components/Misc';
 import {CreatedElement2} from './components/Misc';
 import {New_Button} from './components/Misc';
@@ -40,13 +40,18 @@ const peaceOnEarth = () =>{
 
 function App() {
   const [name, setName] = useState('Jeremy');
-  
-  const test1 = (mytest) => { 
-    return console.log (!mytest);
+  const divEl = useRef(null);
+
+  const getRandomColor = () =>
+    `#${Math.floor(Math.random() * 2 ** 24).toString(16)}`;
+
+  const test1 = (mytest) => {
+    console.log(divEl.current);
+    divEl.current.style.backgroundColor = getRandomColor();
   }
 
   const noSetName = () =>{
-    console.log('I never set a name')
+    console.log('I never set a name');
   }
   let x = 0;
   useEffect(() => {
@@ -54,17 +59,18 @@ function App() {
   },[name]);
 
   return (
-    
-    <div className="App">
+    <>
+    <div ref={divEl} onClick={() => test1(true)} className="App">
             <Button onclick={() => setName('Marcus')} style={{color:'blue', backgroundColor:'red'}} >This is my New button</Button>
             <Button onClick={() => x+=2} style={basicBtn} >This is my New button</Button>
-            <Button className='primary' color="info" onClick={() => setName('Jade') }>This is my New button</Button>
-            <Button className='primary' color="info" onClick={() => test1(true)}>This is my New button</Button>
+            
+            <Button className='primary' color="info" >This is my New button</Button>
             <CreatedElement person={{ name: {name}, imageId: '1bX5QH6'}} test={test2({name})} testx={name}  />
             <CreatedElement2 props={name}  />
             <CreatedElement2 props={name}  />
             <New_Button buttonName='Jeremys Button'/>
-            
+            </div> 
+            <Button className='primary' color="info" onClick={() => setName('Jade') }>This is my New button</Button>
             
             <New_Button2 />
             <Header />
@@ -80,7 +86,9 @@ function App() {
             </Routes>
             <My_Form />
             <Footer />
-    </div>
+        
+        </>
+    
   )
 }
 
