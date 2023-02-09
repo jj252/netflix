@@ -10,6 +10,7 @@ import {
     NavItem
 } from 'reactstrap';
 import { NavLink } from "react-router-dom";
+import UserLoginForm from '../features/user/UserLoginForm';
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -23,7 +24,9 @@ const Header = () => {
          </NavbarBrand>
          <NavbarToggler onClick={() => setMenuOpen(!menuOpen)} />
          <Collapse isOpen={menuOpen} navbar>
+            
             <Nav className="ms-auto" navbar>
+            
                 <NavItem>
                     <NavLink className='nav-link' to='/'>
                         <i className="fa fa-home fa-lg" /> Home
@@ -44,6 +47,7 @@ const Header = () => {
                         <i className="fa fa-address fa-lg" /> Contact
                     </NavLink>
                 </NavItem>
+                <UserLoginForm />
             </Nav>
         </Collapse>
  </Navbar>)
