@@ -1,4 +1,6 @@
 
+import { useDispatch } from 'react-redux';
+import { fetchCampsites } from './features/campsites/campsitesSlice';
 //import logo from './logo.svg';
 //import { Counter } from './features/counter/Counter';
 import './App.css';
@@ -58,19 +60,25 @@ function App() {
     setTimeout(peaceOnEarth,2000);
   },[name]);
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCampsites());
+}, [dispatch]);
+
   return (
-    <>
+   
+
     <div ref={divEl} onClick={() => test1(true)} className="App">
             <Button onclick={() => setName('Marcus')} style={{color:'blue', backgroundColor:'red'}} >This is my New button</Button>
             <Button onClick={() => x+=2} style={basicBtn} >This is my New button</Button>
-            
+            <Button className='primary' color="info" onClick={() => setName('Jade') }>This is my New button</Button>
             <Button className='primary' color="info" >This is my New button</Button>
             <CreatedElement person={{ name: {name}, imageId: '1bX5QH6'}} test={test2({name})} testx={name}  />
             <CreatedElement2 props={name}  />
             <CreatedElement2 props={name}  />
             <New_Button buttonName='Jeremys Button'/>
-            </div> 
-            <Button className='primary' color="info" onClick={() => setName('Jade') }>This is my New button</Button>
+         
             
             <New_Button2 />
             <Header />
@@ -86,8 +94,7 @@ function App() {
             </Routes>
             <My_Form />
             <Footer />
-        
-        </>
+            </div> 
     
   )
 }
