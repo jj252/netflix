@@ -1,0 +1,38 @@
+.my_Nav{
+    position:absolute;
+    left:650px;
+    
+}
+.my_Footer{
+    
+    background-color:black;
+    
+}
+.card{
+    width: 200px;
+}
+
+.fighter{
+    height: 900px;
+    transform: scaleX(-1);
+}
+
+.change_Color{
+    color: antiquewhite;
+    
+}
+
+.NavbarToggler{
+    background-color:darkblue;
+}
+
+@media screen and (max-width:800px){
+    .aboutPage{
+        position:absolute;
+        top: 310px;
+        left: 155px;
+        width: 55%;
+        opacity: 0.8;
+        animation: .4s rollout2;
+    }
+    }

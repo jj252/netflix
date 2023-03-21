@@ -2,12 +2,14 @@ import reactLakeImg from '../assets/img/react-lake.jpg';
 import chromeRiverImg from '../assets/img/chrome-river.jpg';
 import breadCrumbImg from '../assets/img/breadcrumb-trail.jpg';
 import reduxWoodsImg from '../assets/img/redux-woods.jpg';
+import youngsheldon from '../assets/img/cards/youngS.jpg';
+import raymond from '../assets/img/cards/raymond.jpg';
 
 export const CAMPSITES = [
     {
         id: 0,
         name: 'React Lake Campground',
-        image: reactLakeImg,
+        image: youngsheldon,
         elevation: 1233,
         featured: false,
         description:
@@ -15,9 +17,9 @@ export const CAMPSITES = [
     },
     {
         id: 1,
-        name: 'Chrome River Campground ',
-        image: chromeRiverImg,
-        elevation: 877,
+        name: 'Chrome River Campground',
+        image: raymond,
+        elevation: 1233,
         featured: false,
         description:
             'Spend a few sunny days and starry nights beneath a canopy of old-growth firs at this enchanting spot by the Chrome River.'
