@@ -11,6 +11,10 @@
 .card{
     width: 200px;
 }
+.card2{
+    left:50px;
+    width: 200px;
+}
 
 .fighter{
     height: 900px;

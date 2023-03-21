@@ -10,22 +10,45 @@ import CampsiteCard from './utils/CampsiteCard';
 import { CAMPSITES } from './app/shared/CAMPSITES';
 import {Card, CardImg, CardImgOverlay, CardTitle, Container, Col, Row} from 'reactstrap';
 import style from '../src/app/shared/StudentList.module.css';
-import Logic from './utils/Logic';
 
 
 
 
 function App() {
+  const [choice,setChoice] = useState('youngsheldon');
+  const [sendRequest, setSendRequest] = useState(false);
+
   
+
+  useEffect(()=>{
+    if(sendRequest){
+      //send the request
+      setChoice('raymond');
+   }
+
+}, [sendRequest])
 
   return (
             <>
             <Header />
-              <Logic />
-        
+              <Primary prop={choice}/>
+              
+              <Container>
+                <Row>
+                    <Col sm='3'>
+                        <div onClick={() => setSendRequest('youngsheldon')} className={style.card}>
+                            <img src={CAMPSITES[0].image}  />    
+                        </div>
+                    </Col>
+                    <Col sm='1'>
+                        <div onClick={() => setSendRequest('raymond')} className={style.card2}>
+                            <img src={CAMPSITES[1].image} />
+                        </div>
+                    </Col>
+                </Row>
+        </Container>
             <Footer />
             </>
-            
   )
 }
 
