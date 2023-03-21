@@ -21,12 +21,14 @@ function App() {
   
 
   useEffect(()=>{
-    if(sendRequest){
+    if(sendRequest ==='youngsheldon'){
       //send the request
+      setChoice('youngsheldon');
+    }
+    else if(sendRequest ==='raymond'){
       setChoice('raymond');
-   }
-
-}, [sendRequest])
+    }
+   }, [sendRequest])
 
   return (
             <>
