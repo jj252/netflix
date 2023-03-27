@@ -1,6 +1,7 @@
 import {Modal, ModalHeader,ModalBody} from 'reactstrap';
 import {useState} from 'react';
 import style from '../app/shared/StudentList.module.css';
+import Video2 from './Videos2';
 
 
 const My_Modal = () =>{
@@ -11,7 +12,7 @@ const My_Modal = () =>{
         <>
             <Modal className={style.modal1} isOpen={modalOpen}>
                 <ModalHeader toggle={() => setModalOpen(false) } style={{background: 'blue'}}>
-                    <div style={{background: 'blue', color:'orange',top:{setTop} }}>HELLO WORLD</div>
+                    <div style={{background: 'blue', color:'orange', top:{setTop} }}><Video2 /></div>
                 </ModalHeader>
                 <ModalBody>
                     CURRENT FUNDS:$

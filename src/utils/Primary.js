@@ -2,6 +2,8 @@ import youngsheldon from '../app/assets/img/youngsheldon.jpg';
 import raymond from '../app/assets/img/loves_raymond.jpg';
 import {useSpring,animated} from 'react-spring';
 import My_Modal from './My_Modal';
+import Video2 from './Videos2';
+import style from '../app/shared/StudentList.module.css';
 
 const Primary = (choice) =>{
     console.log('CHOICE',choice.prop);
@@ -17,8 +19,8 @@ const Primary = (choice) =>{
         return(
             <>
             <My_Modal />,
-            <animated.div style={animatedStyle}>
-                <img src={youngsheldon}></img>
+            <animated.div className={style.videoSize} style={animatedStyle}>
+                <Video2 />
             </animated.div>
             </>
             )
