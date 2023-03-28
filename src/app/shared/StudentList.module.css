@@ -9,8 +9,45 @@
     
 }
 
+.myVid{
+    z-index: 2;
+    top:60px;
+}
+
+.videoBanner{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 0; 
+    color: white;
+
+}
+
+.video_overlays {
+    position:absolute;
+    float:left;
+        width:640px;
+        min-height:370px;
+        background-color:#000;
+        z-index:300000;
+    }
+
+    .video_overlays2 {
+        position:absolute;
+        float:left;
+            width:640px;
+            min-height:370px;
+            background-color:transparent;
+            z-index:300000;
+        }
+
 .videoSize{
-    width:4500px
+    width:6500px
 }
 
 .modal1{

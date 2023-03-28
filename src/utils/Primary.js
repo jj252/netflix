@@ -4,6 +4,7 @@ import {useSpring,animated} from 'react-spring';
 import My_Modal from './My_Modal';
 import Video2 from './Videos2';
 import style from '../app/shared/StudentList.module.css';
+import Overlay from './Overlay';
 
 const Primary = (choice) =>{
     console.log('CHOICE',choice.prop);
@@ -18,10 +19,13 @@ const Primary = (choice) =>{
     if (my_choice ==='youngsheldon'){
         return(
             <>
-            <My_Modal />,
+            <My_Modal />
+            <Overlay />
             <animated.div className={style.videoSize} style={animatedStyle}>
                 <Video2 />
+                
             </animated.div>
+            
             </>
             )
     }
